@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="">
   <head>
-    <meta charset="utf-8">
-    <title></title>
+    <title>Міста України</title>
   </head>
   <body>
     <header></header>
     <main>
       {%  for sity in sities  %}
       <h1>{{ sity['name_']  }}</h1>
-      <img src="{{ sity['image_'] }}" width="500px", height="500px">
+      <img src="{{ sity['image_'] }}" width="600px", height="500px">
       <h3>{{ sity['description_'] }}</h3>
+      <h3><p>Населення:</p>{{ sity['population_'] }}</h3>
+      <h3><p>Дата заснування:</p>{{ sity['year_of_foundation'] }}</h3>
       {%  endfor  %}
     </main>
     <footer></footer>
