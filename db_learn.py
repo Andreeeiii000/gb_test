@@ -36,8 +36,16 @@ data = curs.fetchall()
 for d in data:
     print(d)
     
-@app.route("/")
+@app.route("/", methods=["GET","POST"])
 def index():
+    name = request.form.get('name')
+    image = request.form.get('image')
+    population = request.form.get('population')
+    curs.execute("INSERT INTO cities (id, name_,population_)")
+
     return render_template('index.html', sities=data)
+
+def add_sity():
+    return render_template('add_sity.html')
 
 app.run(debug=True)
